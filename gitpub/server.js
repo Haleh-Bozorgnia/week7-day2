@@ -4,6 +4,12 @@ const port=3000
 app.get("/",(req,res)=>{
     res.send(`<h1>Welcome to the Gitpub App!</h1`);
 })
+
+
+const drinks = require("./models/drinks")
+app.get("/drinks",(req,res)=>{
+    res.send(drinks)
+})
 app.listen(port,()=>
 {
     console.log("server is listening")
