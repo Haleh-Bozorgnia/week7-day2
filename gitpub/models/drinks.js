@@ -41,4 +41,4 @@ const drinks = [
   },
 ];
 //SEND DATA OUT
-module.exports=drinks
+module.exports = drinks
