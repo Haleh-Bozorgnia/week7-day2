@@ -12,10 +12,10 @@
          <ul>
         <% for(let i = 0; i < drinks.length; i++){ %>
 
-<li>Name: <%= drinks[i].name.charAt(0).toUpperCase() + drinks[i].name.slice(1) %>, Price: <%= drinks[i].price %></li>
-
+<!-- <li>Name: <%= drinks[i].name.charAt(0).toUpperCase() + drinks[i].name.slice(1) %>, Price: <%= drinks[i].price %></li> -->
+ 
+<li><a href="/drink/<%= i %>"><%= drinks[i].name %></a></li>
         <% } %>
     </ul>
- 
 </body>
 </html> 
