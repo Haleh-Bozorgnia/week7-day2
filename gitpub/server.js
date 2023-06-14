@@ -3,7 +3,7 @@ const express = require("express");
 const morgan = require("morgan");
 const drinks = require("./models/drinks");
 const app = express();
-app.use(morgan("dev"))
+app.use(morgan("dev"));
 const port = 3000;
 
 // app.get("/", (req, res) => {
@@ -11,7 +11,7 @@ const port = 3000;
 // });
 
 app.get("/drinks", (req, res) => {
-  res.render("index.ejs",{drinks});
+  res.render("index.ejs", { drinks });
 });
 // Setting up your show route
 
@@ -20,9 +20,11 @@ app.get("/drinks", (req, res) => {
 // })
 
 app.get("/drink/:id", (req, res) => {
-  const id=req.params.id
-  const drink=drinks[id]
-  res.render("show.ejs",{drink})
+  const id = req.params.id;
+  const drink = drinks[id];
+  drink.image = `${drink.image}.png`; // Add .png extension to the image URL
+
+  res.render("show.ejs", { drink });
 });
 app.listen(port, () => {
   console.log("server is listening");
