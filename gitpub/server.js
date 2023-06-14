@@ -13,6 +13,11 @@ const drinks = require("./models/drinks");
 app.get("/drinks", (req, res) => {
   res.render("index.ejs",{drinks});
 });
+// Setting up your show route
+
+app.get("/drinks/:id",(req,res)=>{
+  res.send(req.params.id)
+})
 
 app.listen(port, () => {
   console.log("server is listening");
